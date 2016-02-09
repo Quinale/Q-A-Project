@@ -1,0 +1,28 @@
+.highlight {
+	color: #FF3C3C;
+	font-weight: bolder;
+	font-size: 	22px;
+}
+
+.highlightTableRow {
+	color: #FF3C3C; /* or w/e */
+}
+
+#submittedDateCaption {
+	color: white;
+	font-style: italic;
+	padding-left: 2em;
+}
+
+.error {
+	border-color: red;
+	border-width: thick;
+}
+
+#loginError {
+	color: red;
+}
+
+#usernameLabel {
+	float: left; /* To make room for #loginError. */
+}

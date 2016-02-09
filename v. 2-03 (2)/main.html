@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Q&A App</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
+	<link href="css/383.css" rel="stylesheet">
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Q&A App</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Profile</a>
+                    </li>
+                    <li>
+                        <a id="logoutLink" href="#!">Log out</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"><center>Q&A App</center>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+		
+		<!--Enter question field-->
+		<section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Ask a Question &nbsp;&nbsp;</label>
+								<span id="characterCount" class="hidden">
+									<span id="currentCharacterCount">500</span>/ 500
+								</span>
+                                <input type="text" class="form-control" placeholder="Type your question here" id="questionField" maxlength="500" required data-validation-required-message="Please enter a question.">
+								<br>
+								<button type="submit" id="submitButton" class="btn btn-success btn-lg">Ask</button>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+		<br>
+		
+		<hr>
+        
+	<div id="questionList">	
+		<!-- Project One -->
+         <div class="row">
+            <div class="col-md-12">
+				<div id="questionHeader0">
+					<h3>Question One</h3>
+					<span id="submittedDateCaption">submitted at 
+						<span id="submittedDate0"></span>
+					</span>
+				</div>
+                <h4>
+					<span id="voteCount0"></span>
+					<span id="voteCountLabel">Votes</span>
+				</h4>
+                <p><span id="questionText0"></span></p>
+                <a id="voteButton" class="btn btn-primary">Vote   <span class="glyphicon glyphicon-send"></span></a>
+				<span class="hidden btn btn-primary" id="votedButton">Voted</span>
+            </div>
+        </div>
+        <!-- /.row --> 
+
+         <!-- Project Two -->
+         <div class="row">
+            <div class="col-md-12">
+                <div id="questionHeader1">
+                    <h3>Question Two</h3>
+                    <span id="submittedDateCaption">submitted at 
+                        <span id="submittedDate1"></span>
+                    </span>
+                </div>
+                <h4>
+                    <span id="voteCount1"></span>
+                    <span id="voteCountLabel">Votes</span>
+                </h4>
+                <p><span id="questionText1"></span></p>
+                <a id="voteButton" class="btn btn-primary">Vote   <span class="glyphicon glyphicon-send"></span></a>
+                <span class="hidden btn btn-primary" id="votedButton">Voted</span>
+            </div>
+        </div>
+
+                <!-- Project Three -->
+         <div class="row">
+            <div class="col-md-12">
+                <div id="questionHeader2">
+                    <h3>Question Three</h3>
+                    <span id="submittedDateCaption">submitted at 
+                        <span id="submittedDate2"></span>
+                    </span>
+                </div>
+                <h4>
+                    <span id="voteCount2"></span>
+                    <span id="voteCountLabel">Votes</span>
+                </h4>
+                <p><span id="questionText2"></span></p>
+                <a id="voteButton" class="btn btn-primary">Vote   <span class="glyphicon glyphicon-send"></span></a>
+                <span class="hidden btn btn-primary" id="votedButton">Voted</span>
+            </div>
+        </div>
+	
+
+            <!-- Project Four -->
+         <div class="row">
+            <div class="col-md-12">
+                <div id="questionHeader3">
+                    <h3>Question Four</h3>
+                    <span id="submittedDateCaption">submitted at 
+                        <span id="submittedDate3"></span>
+                    </span>
+                </div>
+                <h4>
+                    <span id="voteCount3"></span>
+                    <span id="voteCountLabel">Votes</span>
+                </h4>
+                <p><span id="questionText3"></span></p>
+                <a id="voteButton" class="btn btn-primary">Vote   <span class="glyphicon glyphicon-send"></span></a>
+                <span class="hidden btn btn-primary" id="votedButton">Voted</span>
+            </div>
+        </div>
+
+                <!-- Project Five -->
+         <div class="row">
+            <div class="col-md-12">
+                <div id="questionHeader4">
+                    <h3>Question Five</h3>
+                    <span id="submittedDateCaption">submitted at 
+                        <span id="submittedDate4"></span>
+                    </span>
+                </div>
+                <h4>
+                    <span id="voteCount4"></span>
+                    <span id="voteCountLabel">Votes</span>
+                </h4>
+                <p><span id="questionText4"></span></p>
+                <a id="voteButton" class="btn btn-primary">Vote   <span class="glyphicon glyphicon-send"></span></a>
+                <span class="hidden btn btn-primary" id="votedButton">Voted</span>
+            </div>
+        </div>
+    </div>
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Phil is so lame lol</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+	
+    <!-- Parse -->
+    <script src="js/parse.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<!-- Custom JavaScript -->
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
