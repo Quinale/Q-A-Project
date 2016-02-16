@@ -1,13 +1,6 @@
 $(document).ready(function() {
-	$('tr').on("mouseover mouseout", function() {
-			var isHighlight = $(this).find("#element:hover").length &&  ($(this).attr('id') !== "tableHeaders");
-			console.log("$(this).find('#element:hover').length) = " + $(this).find("#element:hover").length);
-			 // ^ is(:hover) not working in FF. http://stackoverflow.com/a/16881434
-			console.log("($(this).attr('id') !== 'tableHeaders') = " + ($(this).attr('id') !== "tableHeaders"));
-			console.log("isHighlight = " + isHighlight);
-			$(this).toggleClass("highlightTableRow", isHighlight);	
-			commonInitializations();
-	});
+	$('tr').on("mouseover mouseout", highlightHandler);
+	commonInitializations();
 })
 
 /**
@@ -24,6 +17,18 @@ $(document).ready(function() {
 	 */
 	function initializeParse() {
 		Parse.initialize("A28UnwHZNiBrRgNc9HzRhZk8F8FEZBhsrllFYa6C", "8EdGFQGKbgwUzuCb15zcjr7u2TMdjIKI0e4sZnyY");	
+	}
+	
+	function highlightHandler() {
+		var $this = $(this);	
+		if ($this.find('th').length > 0) {return;} // don't wanna highlight the header.
+		
+		var isHighlight = $this.find("#element:hover").length &&  ($this.attr('id') !== "tableHeaders");
+	//	console.log("$this.find('#element:hover').length) = " + $this.find("#element:hover").length);
+		 // ^ is(:hover) doesn't always work in FF; see http://stackoverflow.com/a/16881434
+	//	console.log("($this.attr('id') !== 'tableHeaders') = " + ($this.attr('id') !== "tableHeaders"));
+	//	console.log("isHighlight = " + isHighlight);
+		$this.toggleClass("highlightTableRow", isHighlight);
 	}
 	
 	function checkCredentials() { // logging is for testing purposes only.
